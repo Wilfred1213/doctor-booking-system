@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Status Update</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appointment Status Update</h1>
+        {% if status == 'ACCEPT' %}
+        <p>Your appointment has been {{ status }}ED. We look forword to see you at the appointed time.</p>
+        {% else %}
+        <p>Sorry appointment has been {{ status }}ED. This is due to the bulk appointment we have to treat the time you book</p>
+        {% endif %}
+        <p> 
+            <strong>Date:</strong> {{ date }}<br>
+            <strong>Time:</strong> {{ time }}
+        </p>
+        <p>Thank you for choosing our services.</p>
+    </div>
+
+    <div class="footer">
+        <p>This email was sent by Your Medical Center. Please do not reply to this email.</p>
+    </div>
+</body>
+</html>

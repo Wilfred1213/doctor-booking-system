@@ -1,0 +1,84 @@
+
+    body {
+        background: url("{% static 'myapp/images/about/img-3.jpg' %}") no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        font-size: 28px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .card-body {
+        padding: 40px;
+    }
+
+    .sidebar {
+        background-color: #007bff;
+        color: #fff;
+        padding: 40px;
+        height: 100vh;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+        margin-bottom: 30px;
+        font-size: 32px;
+    }
+
+    .sidebar p {
+        font-size: 16px;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .brand-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .forgot-password {
+        text-align: center;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .signup-link {
+        text-align: center;
+        margin-top: 20px;
+        color: #28a745;
+        text-decoration: none;
+    }

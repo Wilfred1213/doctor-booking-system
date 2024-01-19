@@ -1,0 +1,87 @@
+{% extends 'myapp/base/authentication_base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% if messages %}
+        <div class="col-md-6 mx-auto alert-danger alert-dismissible fade show" role="alert">
+            <ul class="list-unstyled mb-0 text-center">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar text-center">
+                <img src="{% static 'myapp/images/logo.png' %}" alt="Brand Logo" class="brand-logo">
+                <h2>Doctor Booking</h2>
+                <p>Find and book your preferred doctor with ease.</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Sign Up</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Your signup form goes here -->
+                        <form action="." method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group bg-dark">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="username" class="form-control" required>
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="confirm_password">Confirm Password:</label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="phone">Phone Number:</label>
+                                <input type="text" name="phone" id="phone" class="form-control">
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="fullname">Full Name:</label>
+                                <input type="text" name="fullname" id="fullname" class="form-control">
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="image">Profile Picture:</label>
+                                <div class="custom-file">
+                                    <input type="file" name="image" id="image" class="custom-file-input" accept="image/*">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="form-group bg-dark">
+                                <label for="is_doctor">Are you a Doctor?</label>
+                                <input type="checkbox" name="is_doctor" id="is_doctor" class="form-check-input">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                        </form>
+                        
+                        
+
+                        <!-- Already Signed Up? Log In Link -->
+                        <p class="login-link text-dark">Already signed up? <a href="{% url 'authentications:login_view' %}">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
