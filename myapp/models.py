@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 User = settings.AUTH_USER_MODEL
 TIME_CHOICES = (
@@ -99,6 +100,7 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.ForeignKey(Time, on_delete=models.CASCADE, null = True)
     message = models.TextField(max_length= 10000, null = True)
+    appointment_date= models.DateTimeField(auto_now_add=True, null=True)
 
     status = models.CharField(max_length = 50, choices = STATUS, default = 'PENDING')
     treated = models.BooleanField(default = False)

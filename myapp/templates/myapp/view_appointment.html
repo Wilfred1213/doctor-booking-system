@@ -29,7 +29,7 @@
             {% if not appointment.treated %}
                 <div class="appointment-card">
                     <div class="appointment-header">
-                        <h3>{{ appointment.patient }} | {{ appointment.patient.user.email }}</h3>
+                        <h3>{{ appointment.patient }} | {{ appointment.patient.user.email }} | {{ appointment.appointment_date }}</h3>
                     </div>
                     <div class="appointment-details">
                         <p><strong>Date:</strong> {{ appointment.date }}</p>

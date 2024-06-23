@@ -96,8 +96,6 @@ def index(request):
         department, created = Department.objects.get_or_create(specialization=department)
         times, created = Time.objects.get_or_create(time=time)
         doctor, created = Doctor.objects.get_or_create(id=doctor_id)
-        # subscription(request)
-        
         
         appointment = Appointment(
             doctor=doctor,
